@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — FlyApna.com</title>
+<meta name="description" content="Contact FlyApna.com — call, WhatsApp, or send a trip inquiry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">Fly<span>Apna</span>.com</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="">Home</a></li>
+    <li><a href="destinations.html" class="">Destinations</a></li>
+    <li><a href="about.html" class="">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>
+
+<section class="sky-hero">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="section" style="text-align:center;">
+    <div class="section-inner">
+      <p class="eyebrow" style="color:var(--mist);">Get in touch</p>
+      <h1 class="hero-heading" style="font-size:clamp(1.8rem,4.5vw,3rem);">Let's plan your trip</h1>
+      <p style="color:var(--mist); max-width:520px; margin:0 auto;">Fastest response is on WhatsApp — or send an inquiry below and we'll get back within a day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner two-col contact-cols">
+    <div>
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--gold-deep);">Send an inquiry</p>
+        <h2>Tell us about your trip</h2>
+      </div>
+      <form id="inquiryForm">
+        <div class="form-field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone / WhatsApp number</label>
+          <input id="phone" type="tel" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+        <div class="form-field">
+          <label for="dest">Destination</label>
+          <select id="dest">
+            <option>Bali</option><option>Maldives</option><option>Dubai</option><option>Thailand</option><option>Kerala Backwaters</option><option>Goa</option>
+            <option>Somewhere else</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="msg">Tell us a bit more</label>
+          <textarea id="msg" placeholder="Travel dates, number of people, budget in mind..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="border:none; cursor:pointer;">Send Inquiry</button>
+      </form>
+      <p style="font-size:12px; color:var(--ink-soft); margin-top:14px;">This form is a placeholder for Phase 1 — connect it to email/CRM once ready to go live.</p>
+    </div>
+
+    <div class="contact-side">
+      <p class="contact-intro">We're happy to answer your questions and help you plan your perfect trip.</p>
+      <div class="icon-strip">
+        <a class="icon-strip-item" href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20plan%20a%20trip%20with%20FlyApna." data-dest="" data-source="Contact Page Icon Strip">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11 11 0 0 0 3.5.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1 11 11 0 0 0 .6 3.5 1 1 0 0 1-.2 1z"/></svg></span>
+          <span class="label">WhatsApp</span>
+          <span class="sub">+91 91073 03333</span>
+        </a>
+        <a class="icon-strip-item" href="mailto:apnaholidayz@gmail.com">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="label">Email</span>
+          <span class="sub">apnaholidayz@gmail.com</span>
+        </a>
+        <div class="icon-strip-item">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <span class="label">Quick Response</span>
+          <span class="sub">Within a few hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand">FlyApna.com</p>
+      <p class="footer-tagline">Flights, hotels, and curated holiday packages — planned by real people, not just an algorithm.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <ul>
+        <li><a href="tel:+919496375555">+91 94963 75555</a></li>
+        <li><a href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20know%20more%20about%20FlyApna%20holiday%20packages." data-dest="" data-source="Footer Link">WhatsApp: +91 91073 03333</a></li>
+        <li><a href="mailto:apnaholidayz@gmail.com">apnaholidayz@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 FlyApna.com — All rights reserved</div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
