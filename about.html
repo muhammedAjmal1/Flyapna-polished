@@ -3,71 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us — FlyApna.com</title>
-<meta name="description" content="About FlyApna.com — human-planned travel across Asia and the Gulf.">
+<title>About — FlyApna.com</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">Fly<span>Apna</span>.com</a>
+
+<nav class="navbar" style="position:fixed; background:rgba(10,24,48,0.88);">
+   <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="FlyApna logo" class="nav-logo-img">
+    <span class="nav-logo">Fly<span class="accent">Apna</span>.com</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="index.html" class="">Home</a></li>
-    <li><a href="destinations.html" class="">Destinations</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
     <li><a href="about.html" class="active">About</a></li>
-    <li><a href="contact.html" class="">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
 </nav>
 
-<section class="sky-hero">
+<!-- HERO -->
+<section class="sky-hero sky-hero--parallax">
   <div class="stars" aria-hidden="true"></div>
-  <div class="section" style="text-align:center;">
-    <div class="section-inner">
-      <p class="eyebrow" style="color:var(--mist);">About FlyApna</p>
-      <h1 class="hero-heading" style="font-size:clamp(1.8rem,4.5vw,3rem);">Travel planning, the human way</h1>
-      <p style="color:var(--mist); max-width:560px; margin:0 auto;">We're a small team that plans trips the way we'd plan one for a friend — over a call, not a checkout form.</p>
+  <div class="section" style="padding-top:clamp(96px,14vw,140px); padding-bottom:clamp(72px,10vw,120px); text-align:center;">
+    <div class="section-inner" style="max-width:800px;">
+      <p class="eyebrow" style="color:var(--mist); margin-bottom:20px;">Est. 2022 · Flights, Hotels & Holidays</p>
+      <h1 class="hero-heading">We turn the world into <em style="font-style:italic; color:var(--gold);">your trip</em></h1>
+      <p style="font-size:1.05rem; line-height:1.7; color:var(--mist); max-width:560px; margin:0 auto 34px;">FlyApna crafts holidays that go beyond the checkout form — thoughtful, real-person planning designed for the genuinely curious traveller.</p>
+      <div class="cta-actions">
+        <a href="destinations.html" class="btn btn-gold">Explore Destinations</a>
+        <a href="#story" class="btn btn-outline">Our Story</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-inner two-col">
+<!-- INTRO QUOTE -->
+<section class="intro-quote">
+  <div class="intro-quote__inner">
+    <p class="intro-quote__text">"Travel is not a reward for working hard. It is <strong>education for living well.</strong>"</p>
+    <p class="intro-quote__caption">The philosophy behind every FlyApna trip</p>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="stats-strip">
+  <div class="stats-strip__grid">
+    <div><div class="stat__number">40+</div><div class="stat__divider"></div><div class="stat__label">Destinations covered</div></div>
+    <div><div class="stat__number">2.4k</div><div class="stat__divider"></div><div class="stat__label">Happy travellers</div></div>
+    <div><div class="stat__number">4</div><div class="stat__divider"></div><div class="stat__label">Years of experience</div></div>
+    <div><div class="stat__number">4.8</div><div class="stat__divider"></div><div class="stat__label">Average rating</div></div>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="story-split" id="story">
+  <div class="story-split__inner">
+    <div class="story-split__img-wrap">
+      <img src="about-story.jpg" alt="FlyApna's story" class="story-split__img">
+      <div class="story-split__img-accent"></div>
+    </div>
     <div>
-      <div class="section-head">
-        <p class="eyebrow" style="color:var(--gold-deep);">Our story</p>
-        <h2>Why FlyApna exists</h2>
+      <p class="eyebrow" style="color:var(--gold-deep);">Our Story</p>
+      <h2 class="story-split__title">Born from a love of real travel, not checkout forms</h2>
+      <p class="story-split__body">FlyApna started because booking a holiday shouldn't feel like filling out a tax form. We wanted travel planning to feel like it did before — a real conversation with someone who actually knows the place you're going.</p>
+      <p class="story-split__body">Today we're a small team who plan every trip personally over a call or WhatsApp — no call centres, no templated packages, just honest advice and pricing.</p>
+      <p class="story-split__body">From weekend Kerala backwater escapes to full Maldives honeymoons, every FlyApna itinerary is shaped around the person taking it — never copy-pasted.</p>
+      <div style="margin-top:24px;">
+        <a href="contact.html" class="btn btn-outline-dark">Meet the team</a>
       </div>
-      <p style="font-size:15px; line-height:1.8; color:var(--ink-soft); margin-bottom:18px;">FlyApna started with a simple frustration: booking a holiday online usually means twelve browser tabs, no one to actually ask questions to, and a price that changes by the time you decide. We wanted trip planning to feel more like calling a well-travelled friend.</p>
-      <p style="font-size:15px; line-height:1.8; color:var(--ink-soft);">Today, we help travellers across Kerala and beyond put together flights, hotels, and holiday packages — with a real person on WhatsApp at every step, from the first "where should we go?" to the airport pickup.</p>
-    </div>
-    <div class="info-card">
-      <h4>What we believe</h4>
-      <p style="margin-top:10px; margin-bottom:14px;"><strong>Honest pricing.</strong> No hidden charges revealed at checkout.</p>
-      <p style="margin-bottom:14px;"><strong>Real availability.</strong> We confirm before we quote, not after.</p>
-      <p><strong>A human on the other end.</strong> Every trip has one point of contact, start to finish.</p>
     </div>
   </div>
 </section>
 
-<section class="section" style="background:var(--paper-dim);">
+<!-- FEATURED DESTINATIONS (reuses your existing dest-card styles) -->
+<section class="section" style="background:var(--paper);">
   <div class="section-inner">
-    <div class="cta-band sky-hero">
-      <div class="stars" aria-hidden="true"></div>
-      <div style="position:relative;">
-        <h2>Let's plan something</h2>
-        <p>Tell us where you're thinking, and we'll take it from there.</p>
-        <div class="cta-actions">
-          <a href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20plan%20a%20trip%20with%20FlyApna." class="btn btn-gold"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.3-.4a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7s2 3 4.7 4.2a5.7 5.7 0 0 0 3.5.7 3 3 0 0 0 2-1.4 2.4 2.4 0 0 0 .2-1.4c-.1-.1-.3-.2-.5-.3z"/></svg> Start on WhatsApp</a>
-          <a href="contact.html" class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Send an Inquiry</a>
-        </div>
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--gold-deep);">Where We Go</p>
+      <h2>Featured destinations</h2>
+      <p>A small selection from our growing list of curated routes across Asia and the Gulf.</p>
+    </div>
+    <div class="dest-grid">
+      <a class="dest-card" href="bali.html" style="background:url('bali-card.jpg') center/cover no-repeat;">
+        <span class="code">DPS</span>
+        <h3>Bali</h3>
+        <p class="tagline">Rice terraces, temples & sunset surf</p>
+        <p class="price">From ₹58,000 · 6 Days / 5 Nights</p>
+      </a>
+      <a class="dest-card grad-maldives" href="maldives.html" style="background:url('maldives-card.jpeg') center/cover no-repeat;">
+        <span class="code">MLE</span>
+        <h3>Maldives</h3>
+        <p class="tagline">Overwater villas on turquoise lagoons</p>
+        <p class="price">From ₹95,000 · 5 Days / 4 Nights</p>
+      </a>
+      <a class="dest-card grad-dubai" href="dubai.html" style="background:url('dubai-card.jpg') center/cover no-repeat;">
+        <span class="code">DXB</span>
+        <h3>Dubai</h3>
+        <p class="tagline">Desert dunes to record-breaking skylines</p>
+        <p class="price">From ₹65,000 · 5 Days / 4 Nights</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-band">
+  <div class="values-band__inner">
+    <div class="section-head center">
+      <p class="eyebrow" style="color:var(--gold);">Why FlyApna</p>
+      <h2 style="color:var(--paper);">Travel the way it was meant to be</h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card2">
+        <div class="value-card2__icon">◈</div>
+        <h3 class="value-card2__title">Personal, not automated</h3>
+        <p class="value-card2__text">Every trip is planned by a real person over a call or WhatsApp — never a bot or a static form.</p>
+      </div>
+      <div class="value-card2">
+        <div class="value-card2__icon">◉</div>
+        <h3 class="value-card2__title">Honest pricing</h3>
+        <p class="value-card2__text">No hidden mark-ups. What you're quoted is what you pay — we'll always tell you where the money goes.</p>
+      </div>
+      <div class="value-card2">
+        <div class="value-card2__icon">◎</div>
+        <h3 class="value-card2__title">Always reachable</h3>
+        <p class="value-card2__text">Questions during your trip? We're a WhatsApp message away — not a support ticket queue.</p>
       </div>
     </div>
   </div>
+</section>
+
+<!-- IMAGE BAND WITH QUOTE -->
+<div class="image-band">
+  <img src="about-band.png" alt="Travellers on a scenic trail" class="image-band__img">
+  <div class="image-band__overlay">
+    <div class="image-band__text">
+      <p class="image-band__quote">"The best itineraries are the ones you never had to plan yourself."</p>
+      <p class="image-band__attr">— FlyApna Team</p>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="section-head center">
+    <p class="eyebrow" style="color:var(--gold-deep);">The People Behind Your Trip</p>
+    <h2>Meet the team</h2>
+    <p>Real people who pick up the phone, know the destinations, and actually care where you're headed.</p>
+  </div>
+  <div class="team-grid">
+    <div>
+      <div class="team-card2__initial">S</div>
+      <h3 class="team-card2__name">Shabeer.</h3>
+      <p class="team-card2__role">Destinations Lead</p>
+      <p class="team-card2__bio">Plans your trip like he'd plan his own family's holiday.</p>
+    </div>
+    <div>
+      <div class="team-card2__initial">F</div>
+      <h3 class="team-card2__name">Faisal</h3>
+      <p class="team-card2__role">Destinations Lead</p>
+      <p class="team-card2__bio">Knows every villa, guide, and backroad worth taking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-gold">
+  <h2 class="cta-gold__title">Ready to go somewhere that changes you?</h2>
+  <p class="cta-gold__sub">Tell us where you've always wanted to go. We'll take care of everything else — thoughtfully.</p>
+  <a href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20plan%20a%20trip%20with%20FlyApna." class="btn btn-outline-dark" style="background:#fff;">Start planning your trip</a>
 </section>
 
 <footer class="site-footer">
@@ -75,6 +185,17 @@
     <div>
       <p class="footer-brand">FlyApna.com</p>
       <p class="footer-tagline">Flights, hotels, and curated holiday packages — planned by real people, not just an algorithm.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/flyapna" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://instagram.com/flyapna" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+        </a>
+        <a href="https://youtube.com/@flyapna" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-2.5-.2-4-.6-4.9-.3-.6-.8-1.1-1.4-1.4C18.9 5.2 12 5.2 12 5.2s-6.9 0-8 .5c-.6.3-1.1.8-1.4 1.4C2.2 8 2 9.5 2 12s.2 4 .6 4.9c.3.6.8 1.1 1.4 1.4 1.1.5 8 .5 8 .5s6.9 0 8-.5c.6-.3 1.1-.8 1.4-1.4.4-.9.6-2.4.6-4.9zM10 15.2V8.8l5.5 3.2-5.5 3.2z"/></svg>
+        </a>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Explore</h4>
@@ -89,7 +210,7 @@
       <ul>
         <li><a href="tel:+919496375555">+91 94963 75555</a></li>
         <li><a href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20know%20more%20about%20FlyApna%20holiday%20packages.">WhatsApp: +91 91073 03333</a></li>
-        <li><a href="mailto:apnaholidayz@gmail.com">apnaholidayz@gmail.com</a></li>
+        <li><a href="mailto:info@flyapna.com">info@flyapna.com</a></li>
       </ul>
     </div>
   </div>

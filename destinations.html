@@ -11,13 +11,17 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">Fly<span>Apna</span>.com</a>
+  
+<nav class="navbar" style="position:fixed; background:rgba(10,24,48,0.88);">
+   <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="FlyApna logo" class="nav-logo-img">
+    <span class="nav-logo">Fly<span class="accent">Apna</span>.com</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="index.html" class="">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="destinations.html" class="active">Destinations</a></li>
-    <li><a href="about.html" class="">About</a></li>
-    <li><a href="contact.html" class="">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -36,43 +40,51 @@
 </section>
 <section class="section">
   <div class="section-inner">
-    <div class="dest-grid">
-      <a class="dest-card grad-bali" href="bali.html">
+
+    <div class="dest-search-wrap">
+      <div class="dest-search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="dest-search-icon"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="destSearchInput" placeholder="Search countries, cities" autocomplete="off">
+      </div>
+      <p id="destNoResults" class="dest-no-results" hidden>No destinations match "<span id="destQueryText"></span>" — <a href="https://wa.me/919107303333?text=Hi!%20I'm%20looking%20for%20a%20destination%20not%20listed%20on%20your%20site." target="_blank">message us</a>, we can still help.</p>
+    </div>
+    <div class="dest-grid" id="destGrid">
+      <a class="dest-card grad-bali" href="bali.html" style="background: url('bali-card.jpg') center/cover no-repeat;" >
     <span class="code">DPS</span>
     <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22V11"/><path d="M12 11c-2-3-6-3-8-1 2 2 5 2 8 1z"/><path d="M12 11c2-3 6-3 8-1-2 2-5 2-8 1z"/><path d="M12 11c-1-3 0-6 2-8-3 0-5 3-4 6"/><path d="M12 11c1-3 0-6-2-8 3 0 5 3 4 6"/></svg></span>
     <h3>Bali</h3>
     <p class="tagline">Rice terraces, temples & sunset surf</p>
     <p class="price">From ₹58,000 · 6 Days / 5 Nights</p>
   </a>
-<a class="dest-card grad-maldives" href="maldives.html">
+<a class="dest-card grad-maldives" href="maldives.html" style="background: url('maldives-card.jpeg') center/cover no-repeat;">
     <span class="code">MLE</span>
     <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 15h18l-2 5H5l-2-5z"/><path d="M12 15V4"/><path d="M12 4c3 0 5 2 5 5h-5"/></svg></span>
     <h3>Maldives</h3>
     <p class="tagline">Overwater villas on turquoise lagoons</p>
     <p class="price">From ₹95,000 · 5 Days / 4 Nights</p>
   </a>
-<a class="dest-card grad-dubai" href="dubai.html">
+<a class="dest-card grad-dubai" href="dubai.html" style="background: url('dubai-card.jpg') center/cover no-repeat;">
     <span class="code">DXB</span>
     <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V11a8 8 0 0 1 16 0v10"/><path d="M4 21h16"/></svg></span>
     <h3>Dubai</h3>
     <p class="tagline">Desert dunes to record-breaking skylines</p>
     <p class="price">From ₹65,000 · 5 Days / 4 Nights</p>
   </a>
-<a class="dest-card grad-thailand" href="thailand.html">
+<a class="dest-card grad-thailand" href="thailand.html" style="background: url('thailand-card.jpeg') center/cover no-repeat;">
     <span class="code">BKK</span>
     <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l3 4H9l3-4z"/><path d="M7 6h10v3H7z"/><path d="M5 9h14l1 3H4l1-3z"/><path d="M4 21V13h16v8"/></svg></span>
     <h3>Thailand</h3>
     <p class="tagline">Golden temples, islands & street food</p>
     <p class="price">From ₹52,000 · 6 Days / 5 Nights</p>
   </a>
-<a class="dest-card grad-kerala" href="kerala-backwaters.html">
+<a class="dest-card grad-kerala" href="kerala-backwaters.html" style="background: url('kerala-card.jpeg') center/cover no-repeat;">
     <span class="code">COK</span>
     <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 15h18l-2 5H5l-2-5z"/><path d="M12 15V4"/><path d="M12 4c3 0 5 2 5 5h-5"/></svg></span>
     <h3>Kerala Backwaters</h3>
     <p class="tagline">Houseboats through God’s Own Country</p>
     <p class="price">From ₹28,000 · 4 Days / 3 Nights</p>
   </a>
-<a class="dest-card grad-goa" href="goa.html">
+<a class="dest-card grad-goa" href="goa.html" style="background: url('goa-card.jpeg') center/cover no-repeat;">
     <span class="code">GOI</span>
     <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22V11"/><path d="M12 11c-2-3-6-3-8-1 2 2 5 2 8 1z"/><path d="M12 11c2-3 6-3 8-1-2 2-5 2-8 1z"/><path d="M12 11c-1-3 0-6 2-8-3 0-5 3-4 6"/><path d="M12 11c1-3 0-6-2-8 3 0 5 3 4 6"/></svg></span>
     <h3>Goa</h3>
@@ -87,6 +99,17 @@
     <div>
       <p class="footer-brand">FlyApna.com</p>
       <p class="footer-tagline">Flights, hotels, and curated holiday packages — planned by real people, not just an algorithm.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/flyapna" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://instagram.com/flyapna" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+        </a>
+        <a href="https://youtube.com/@flyapna" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-2.5-.2-4-.6-4.9-.3-.6-.8-1.1-1.4-1.4C18.9 5.2 12 5.2 12 5.2s-6.9 0-8 .5c-.6.3-1.1.8-1.4 1.4C2.2 8 2 9.5 2 12s.2 4 .6 4.9c.3.6.8 1.1 1.4 1.4 1.1.5 8 .5 8 .5s6.9 0 8-.5c.6-.3 1.1-.8 1.4-1.4.4-.9.6-2.4.6-4.9zM10 15.2V8.8l5.5 3.2-5.5 3.2z"/></svg>
+        </a>
+      </div>
     </div>
     <div class="footer-col">
       <h4>Explore</h4>
@@ -101,7 +124,7 @@
       <ul>
         <li><a href="tel:+919496375555">+91 94963 75555</a></li>
         <li><a href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20know%20more%20about%20FlyApna%20holiday%20packages.">WhatsApp: +91 91073 03333</a></li>
-        <li><a href="mailto:apnaholidayz@gmail.com">apnaholidayz@gmail.com</a></li>
+        <li><a href="mailto:info@flyapna.com">info@flyapna.com</a></li>
       </ul>
     </div>
   </div>

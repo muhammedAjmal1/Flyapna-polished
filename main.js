@@ -1,12 +1,51 @@
 // ===== WhatsApp number — change this one line to update it everywhere =====
-const WHATSAPP_NUMBER = '917592990655'; // country code + number, no + or spaces
+const WHATSAPP_NUMBER = '919107303333'; // country code + number, no + or spaces
 
 // ===== Google Sheet leads endpoint =====
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwswS5Yc1DI8wnefkHmVnJ9NKXMwRjmKNfTuRJZXQ-Va4n0QN5ymegOhkdOzZEfXA5k1g/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyaEmrPaYek26WPHpRed87jTq_Zxs9pK-gMlMuJgKPjbQkrcrdNM3D_C6A2XvfXgDqYtQ/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
+
+  // Homepage destinations — vertical stack of 3, whole group slides right, mobile only
+  const carouselWrap = document.querySelector('.dest-carousel-wrap');
+  if (carouselWrap) {
+    const track = carouselWrap.querySelector('.dest-carousel-track');
+    const pages = track.querySelectorAll('.dest-page');
+    const dotsWrap = carouselWrap.querySelector('.dest-dots');
+    let idx = 0;
+    let timer;
+
+    function goTo(i) {
+      idx = (i + pages.length) % pages.length;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dotsWrap.querySelectorAll('.dest-dot').forEach((d, di) => {
+        d.classList.toggle('active', di === idx);
+      });
+    }
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      pages.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'dest-dot' + (i === 0 ? ' active' : '');
+        dotsWrap.appendChild(dot);
+      });
+    }
+
+    function startAutoSlide() {
+      if (!window.matchMedia('(max-width:600px)').matches || pages.length < 2) return;
+      timer = setInterval(() => goTo(idx + 1), 3800);
+    }
+    function stopAutoSlide() { clearInterval(timer); }
+
+    buildDots();
+    startAutoSlide();
+
+    carouselWrap.addEventListener('touchstart', stopAutoSlide, { passive: true });
+    carouselWrap.addEventListener('touchend', () => setTimeout(startAutoSlide, 4500), { passive: true });
+  }
 
   // Contact form submission
   const inquiryForm = document.getElementById('inquiryForm');
@@ -55,50 +94,76 @@ document.addEventListener('DOMContentLoaded', () => {
       soundToggle.querySelector('.icon-muted').style.display = heroVideo.muted ? 'block' : 'none';
       soundToggle.querySelector('.icon-unmuted').style.display = heroVideo.muted ? 'none' : 'block';
     });
+
+    
   }
 
-  // Split-flap headline effect
-  document.querySelectorAll('[data-flap]').forEach(container => {
-    const text = container.getAttribute('data-flap');
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const spans = [];
-    const words = text.split(' ');
-    words.forEach((word, wi) => {
-      const wordSpan = document.createElement('span');
-      wordSpan.className = 'flap-word';
-      word.split('').forEach((ch) => {
-        const span = document.createElement('span');
-        span.className = 'flap-char';
-        span.textContent = reduceMotion ? ch : ' ';
-        wordSpan.appendChild(span);
-        spans.push({ el: span, final: ch });
+  // Destinations page — live search filter
+  const destSearchInput = document.getElementById('destSearchInput');
+  const destGrid = document.getElementById('destGrid');
+  const destNoResults = document.getElementById('destNoResults');
+  const destQueryText = document.getElementById('destQueryText');
+
+  if (destSearchInput && destGrid) {
+    const cards = Array.from(destGrid.querySelectorAll('.dest-card'));
+
+    destSearchInput.addEventListener('input', () => {
+      const query = destSearchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const name = (card.querySelector('h3')?.textContent || '').toLowerCase();
+        const tagline = (card.querySelector('.tagline')?.textContent || '').toLowerCase();
+        const code = (card.querySelector('.code')?.textContent || '').toLowerCase();
+        const matches = !query || name.includes(query) || tagline.includes(query) || code.includes(query);
+
+        card.dataset.hidden = matches ? 'false' : 'true';
+        if (matches) visibleCount++;
       });
-      container.appendChild(wordSpan);
-      if (wi < words.length - 1) container.appendChild(document.createTextNode(' '));
+
+      if (destNoResults) {
+        if (visibleCount === 0 && query) {
+          destQueryText.textContent = destSearchInput.value.trim();
+          destNoResults.hidden = false;
+        } else {
+          destNoResults.hidden = true;
+        }
+      }
     });
-    if (!reduceMotion) {
-      spans.forEach((s, i) => {
-        const delay = i * 45;
-        const cycles = 5 + Math.floor(Math.random() * 4);
-        let count = 0;
-        setTimeout(() => {
-          const interval = setInterval(() => {
-            count++;
-            s.el.classList.remove('flapping');
-            void s.el.offsetWidth;
-            s.el.classList.add('flapping');
-            if (count >= cycles) {
-              clearInterval(interval);
-              s.el.textContent = s.final;
-            } else {
-              s.el.textContent = chars[Math.floor(Math.random() * chars.length)];
-            }
-          }, 50);
-        }, delay);
+  }
+
+  // Fade in the image-band quote every time it scrolls into view
+  const bandText = document.querySelector('.image-band__text');
+  if (bandText) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bandText.classList.add('in-view');
+        } else {
+          bandText.classList.remove('in-view');
+        }
       });
-    }
-  });
+    }, { threshold: 0.35 });
+
+    observer.observe(bandText);
+  }
+
+  // Scroll-triggered 3D depth reveal for sections — plays once per section
+  const revealEls = document.querySelectorAll('.reveal-3d');
+  if (revealEls.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
+
+  
 
   // ===== Name + phone modal — now gates EVERY WhatsApp link on the site =====
   function openWaModal(dest, message, waHref) {
