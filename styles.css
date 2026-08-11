@@ -23,7 +23,7 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:'Inter', -apple-system, sans-serif;
+  font-family:'Nunito Sans', -apple-system, sans-serif;
   overflow-x:hidden;
 }
 img{max-width:100%; display:block;}
@@ -61,7 +61,7 @@ a{color:inherit;}
 }
 
 .nav-logo{
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-weight:600;
   font-size:27px;    /* ← control the text's size here, independently */
   color:var(--paper);
@@ -227,7 +227,7 @@ a{color:inherit;}
 .section-head.center{ margin:0 auto 48px; text-align:center; }
 .section-head .eyebrow{ color:var(--gold-deep); margin:0 0 12px; }
 .section-head h2{
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-weight:600;
   font-size:clamp(1.8rem,4vw,2.6rem);
   line-height:1.15;
@@ -278,7 +278,7 @@ footer.site-footer{
   display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;
 }
 .footer-brand{
-  font-family:'Fraunces', serif; font-weight:600; font-size:22px;
+  font-family:'Baloo 2', sans-serif; font-weight:600; font-size:22px;
   color:var(--paper); margin:0 0 12px;
 }
 .footer-tagline{ font-size:14px; line-height:1.7; color:var(--mist-dim); max-width:280px; }
@@ -326,7 +326,7 @@ footer.site-footer{
   padding:5px 10px; border-radius:5px;
 }
 .dest-card .icon{ position:absolute; top:16px; right:18px; width:34px; height:34px; opacity:0.85; }
-.dest-card h3{ font-family:'Fraunces', serif; font-weight:600; font-size:1.5rem; margin:0 0 4px; }
+.dest-card h3{ font-family:'Baloo 2', sans-serif; font-weight:600; font-size:1.5rem; margin:0 0 4px; }
 .dest-card .tagline{ font-size:13px; opacity:0.85; margin:0 0 10px; line-height:1.5; }
 .dest-card .price{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--gold); }
 .dest-card::before{
@@ -361,7 +361,7 @@ footer.site-footer{
 }
 .persona-card:hover{ background:rgba(242,184,75,0.1); border-color:var(--gold); transform:translateY(-2px); }
 .persona-card .icon{ width:36px; height:36px; color:var(--gold); }
-.persona-card .label{ font-family:'Fraunces', serif; font-size:1.05rem; font-weight:600; }
+.persona-card .label{ font-family:'Baloo 2', sans-serif; font-size:1.05rem; font-weight:600; }
 .persona-card .sub{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; color:var(--mist); text-transform:uppercase; }
 
 /* ---------- Trust section ---------- */
@@ -424,7 +424,7 @@ footer.site-footer{
   display:flex;
   align-items:center;
   gap:10px;
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-size:1.1rem;
   margin:0 0 6px;
   color:var(--ink);
@@ -447,7 +447,7 @@ footer.site-footer{
   font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--gold-deep);
   letter-spacing:0.08em;
 }
-.itinerary-day h5{ font-family:'Fraunces', serif; font-size:1.05rem; margin:0 0 6px; color:var(--ink); }
+.itinerary-day h5{ font-family:'Baloo 2', sans-serif; font-size:1.05rem; margin:0 0 6px; color:var(--ink); }
 .itinerary-day p{ font-size:14px; color:var(--ink-soft); line-height:1.7; margin:0; }
 
 .highlight-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
@@ -472,7 +472,7 @@ footer.site-footer{
 .form-field input, .form-field select, .form-field textarea{
   width:100%; padding:13px 14px; border-radius:8px;
   border:1px solid var(--line); background:#fff; color:var(--ink);
-  font-family:'Inter', sans-serif; font-size:14.5px;
+  font-family:'Nunito Sans', sans-serif; font-size:14.5px;
 }
 .form-field textarea{ min-height:110px; resize:vertical; }
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus{
@@ -486,7 +486,7 @@ footer.site-footer{
   text-align:center;
 }
 .cta-band h2{
-  font-family:'Fraunces', serif; font-weight:600; font-size:clamp(1.6rem,3.6vw,2.2rem);
+  font-family:'Baloo 2', sans-serif; font-weight:600; font-size:clamp(1.6rem,3.6vw,2.2rem);
   margin:0 0 14px; color:var(--paper);
 }
 .cta-band p{ color:var(--mist); margin:0 0 26px; font-size:15px; }
@@ -505,7 +505,7 @@ footer.site-footer{
   }
 }
 .hero-heading{
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-optical-sizing:auto;
   font-weight:600;
   font-size:clamp(2rem, 5.6vw, 3.6rem);
@@ -556,7 +556,7 @@ footer.site-footer{
   box-shadow:0 30px 60px -20px rgba(5,12,26,0.5);
 }
 .wa-modal h3{
-  font-family:'Fraunces', serif; font-size:1.3rem; margin:0 0 6px; color:var(--ink);
+  font-family:'Baloo 2', sans-serif; font-size:1.3rem; margin:0 0 6px; color:var(--ink);
 }
 .wa-modal p.sub{ font-size:13.5px; color:var(--ink-soft); margin:0 0 20px; }
 .wa-modal .form-field{ margin-bottom:16px; }
@@ -617,7 +617,7 @@ footer.site-footer{
   justify-content:center;
   background:#fff;
   color:var(--ink);
-  font-family:'Inter', sans-serif;
+  font-family:'Nunito Sans', sans-serif;
   font-weight:600;
   font-size:16px;
   text-decoration:none;
@@ -634,7 +634,7 @@ footer.site-footer{
 
 .hero-lede{
   position:relative;
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-style:italic;
   font-weight:400;
   font-size:clamp(1.15rem, 2.4vw, 1.4rem);
@@ -756,7 +756,7 @@ footer.site-footer{
   text-align:center;
 }
 .stat__number{
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-weight:700;
   font-size:clamp(2rem, 4vw, 2.8rem);
   color:var(--ink);
@@ -790,7 +790,7 @@ footer.site-footer{
 }
 .intro-quote__inner{ max-width:760px; margin:0 auto; }
 .intro-quote__text{
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-style:italic;
   font-size:clamp(1.5rem, 3.5vw, 2.3rem);
   line-height:1.45;
@@ -820,7 +820,7 @@ footer.site-footer{
   background:var(--gold); border-radius:8px; z-index:-1;
 }
 .story-split__title{
-  font-family:'Fraunces', serif; font-weight:600;
+  font-family:'Baloo 2', sans-serif; font-weight:600;
   font-size:clamp(1.8rem,3.5vw,2.4rem);
   color:var(--ink); margin:10px 0 20px; line-height:1.2;
 }
@@ -840,7 +840,7 @@ footer.site-footer{
 }
 .value-card2:hover{ border-color:var(--gold); background:rgba(242,184,75,0.06); }
 .value-card2__icon{ font-size:1.6rem; color:var(--gold); margin-bottom:14px; }
-.value-card2__title{ font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600; margin:0 0 10px; color:var(--paper); }
+.value-card2__title{ font-family:'Baloo 2', sans-serif; font-size:1.15rem; font-weight:600; margin:0 0 10px; color:var(--paper); }
 .value-card2__text{ font-size:13.5px; color:rgba(245,241,230,0.55); line-height:1.75; margin:0; }
 .value-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
 @media (max-width:768px){ .value-grid{ grid-template-columns:1fr; } }
@@ -863,16 +863,16 @@ footer.site-footer{
   width:104px; height:104px; border-radius:50%;
   background:var(--sky-deep); color:var(--gold);
   display:flex; align-items:center; justify-content:center;
-  font-family:'Fraunces', serif; font-weight:700; font-size:1.7rem;
+  font-family:'Baloo 2', sans-serif; font-weight:700; font-size:1.7rem;
   margin:0 auto 16px;
 }
-.team-card2__name{ font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; color:var(--ink); margin:0 0 4px; }
+.team-card2__name{ font-family:'Baloo 2', sans-serif; font-weight:600; font-size:1.05rem; color:var(--ink); margin:0 0 4px; }
 .team-card2__role{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-deep); font-weight:600; margin:0 0 10px; }
 .team-card2__bio{ font-size:13px; color:var(--ink-soft); line-height:1.7; }
 
 /* ---------- Gold CTA band ---------- */
 .cta-gold{ background:var(--gold); padding:clamp(48px,7vw,72px) clamp(20px,5vw,64px); text-align:center; }
-.cta-gold__title{ font-family:'Fraunces', serif; font-weight:700; font-size:clamp(1.7rem,3.5vw,2.4rem); color:var(--sky-deep); margin:0 0 12px; }
+.cta-gold__title{ font-family:'Baloo 2', sans-serif; font-weight:700; font-size:clamp(1.7rem,3.5vw,2.4rem); color:var(--sky-deep); margin:0 0 12px; }
 .cta-gold__sub{ color:rgba(10,24,48,0.7); font-size:15px; max-width:480px; margin:0 auto 26px; }
 
 
@@ -905,7 +905,7 @@ footer.site-footer{
   border:none;
   outline:none;
   width:100%;
-  font-family:'Inter', sans-serif;
+  font-family:'Nunito Sans', sans-serif;
   font-size:16px;
   color:var(--ink);
   background:transparent;
@@ -948,7 +948,7 @@ footer.site-footer{
   justify-content:center;
 }
 .contact-split__title{
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-weight:700;
   font-size:clamp(1.5rem,2.6vw,1.9rem);
   color:var(--ink);
@@ -989,7 +989,7 @@ footer.site-footer{
   border:none;
   outline:none;
   width:100%;
-  font-family:'Inter', sans-serif;
+  font-family:'Nunito Sans', sans-serif;
   font-size:15px;
   color:var(--ink);
   background:transparent;
@@ -1090,7 +1090,7 @@ footer.site-footer{
   transform:translateY(0);
 }
 .image-band__quote{
-  font-family:'Fraunces', serif;
+  font-family:'Baloo 2', sans-serif;
   font-style:italic;
   font-size:clamp(1.5rem, 3vw, 2.2rem);
   line-height:1.4;
