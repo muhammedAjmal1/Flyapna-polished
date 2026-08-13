@@ -64,16 +64,16 @@ a{color:inherit;}
   font-family:'Baloo 2', sans-serif;
   font-weight:600;
   font-size:27px;    /* ← control the text's size here, independently */
-  color:var(--paper);
+  color: #3b9ee8;
   letter-spacing:-0.01em;
 }
 
 .nav-logo .accent{
-  color: white
+  color: #3b9ee8
 
 ;  /* just the "Apna" part */
 }
-.nav-logo span{ color:var(--gold-deep); }
+.nav-logo span{ color:#3b9ee8; }
 .nav-links{
   display:flex; align-items:center; gap:28px;
   list-style:none; margin:0; padding:0;
