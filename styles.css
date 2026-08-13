@@ -446,6 +446,9 @@ footer.site-footer{
 .itinerary-day .num{
   font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--gold-deep);
   letter-spacing:0.08em;
+  white-space:nowrap;
+  flex:none;
+  width:52px;
 }
 .itinerary-day h5{ font-family:'Baloo 2', sans-serif; font-size:1.05rem; margin:0 0 6px; color:var(--ink); }
 .itinerary-day p{ font-size:14px; color:var(--ink-soft); line-height:1.7; margin:0; }
@@ -1189,4 +1192,69 @@ footer.site-footer{
 .footer-social a svg{
   width:18px;
   height:18px;
+}
+/* ---------- Itinerary day toggle/accordion ---------- */
+.itinerary-day{
+  cursor:pointer;
+}
+.itinerary-day__header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.itinerary-day__toggle{
+  flex:none;
+  width:28px; height:28px;
+  border-radius:50%;
+  border:1.5px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  transition:transform 0.3s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.itinerary-day__toggle svg{
+  width:14px; height:14px;
+  color:var(--ink-soft);
+  transition:transform 0.3s ease;
+}
+.itinerary-day.open .itinerary-day__toggle{
+  border-color:var(--gold-deep);
+  background:var(--gold-deep);
+}
+.itinerary-day.open .itinerary-day__toggle svg{
+  color:#fff;
+  transform:rotate(180deg);
+}
+.itinerary-day__full{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s cubic-bezier(.16,.84,.44,1), margin-top 0.4s ease;
+  margin-top:0;
+}
+.itinerary-day.open .itinerary-day__full{
+  max-height:400px;
+  margin-top:14px;
+}
+.itinerary-day__full-inner{
+  font-size:13.5px;
+  color:var(--ink-soft);
+  line-height:1.75;
+  padding-top:10px;
+  border-top:1px dashed var(--line);
+}
+.itinerary-day__full-inner ul{
+  margin:10px 0 0;
+  padding-left:18px;
+}
+.itinerary-day__full-inner li{
+  margin-bottom:6px;
+}
+/* Override the old grid layout for the new toggle structure */
+.itinerary-day{
+  display:block;
+}
+.itinerary-day__header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
 }

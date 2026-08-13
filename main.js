@@ -163,7 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => revealObserver.observe(el));
   }
 
-  
+  // Itinerary day toggle/accordion
+  document.querySelectorAll('.itinerary-day').forEach(day => {
+    const header = day.querySelector('.itinerary-day__header');
+    if (header) {
+      header.addEventListener('click', () => {
+        day.classList.toggle('open');
+      });
+    }
+  });
 
   // ===== Name + phone modal — now gates EVERY WhatsApp link on the site =====
   function openWaModal(dest, message, waHref) {
