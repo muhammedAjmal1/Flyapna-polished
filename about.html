@@ -6,7 +6,8 @@
 <title>About — FlyApna.com</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,7 +39,7 @@
       <p style="font-size:1.05rem; line-height:1.7; color:var(--mist); max-width:560px; margin:0 auto 34px;">FlyApna crafts holidays that go beyond the checkout form — thoughtful, real-person planning designed for the genuinely curious traveller.</p>
       <div class="cta-actions">
         <a href="destinations.html" class="btn btn-gold">Explore Destinations</a>
-        <a href="#story" class="btn btn-outline">Our Story</a>
+        <a href="#find-us" class="btn btn-outline">Find us</a>
       </div>
     </div>
   </div>
@@ -52,15 +53,51 @@
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<section class="stats-strip">
-  <div class="stats-strip__grid">
-    <div><div class="stat__number">40+</div><div class="stat__divider"></div><div class="stat__label">Destinations covered</div></div>
-    <div><div class="stat__number">2.4k</div><div class="stat__divider"></div><div class="stat__label">Happy travellers</div></div>
-    <div><div class="stat__number">4</div><div class="stat__divider"></div><div class="stat__label">Years of experience</div></div>
-    <div><div class="stat__number">4.8</div><div class="stat__divider"></div><div class="stat__label">Average rating</div></div>
+<!-- Map & Location -->
+<section class="location-strip" id="find-us">
+  <div class="location-strip__inner">
+    <div class="location-strip__details">
+      <p class="eyebrow" style="color:var(--gold-deep); margin-bottom:12px;">Find us</p>
+      <h3>Visit or reach out anytime</h3>
+
+      <div class="location-strip__row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <p>Plaza Residency, Plaza Chambers<br>Above Hotel Fountain Plaza, Near Old Handloom House<br>Maruti X Lane, R.D. Street, Borabazar Precinct<br>Fort, Mumbai, Maharashtra 400001</p>
+      </div>
+
+      <div class="location-strip__row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11 11 0 0 0 3.5.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1 11 11 0 0 0 .6 3.5 1 1 0 0 1-.2 1z"/></svg>
+        <p><a href="tel:+919496375555">+91 94963 75555</a></p>
+      </div>
+
+      <div class="location-strip__row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <p><a href="mailto:info@flyapna.com">info@flyapna.com</a></p>
+      </div>
+
+      <div class="location-strip__row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <p>Open · Closes 6 PM</p>
+      </div>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=18.9354829,72.8341767" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:8px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Get Directions
+      </a>
+    </div>
+
+    <div class="location-strip__map">
+      <iframe
+        src="https://www.google.com/maps?q=18.9354829,72.8341767&z=17&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </div>
 </section>
+
+    
 
 <!-- OUR STORY -->
 <section class="story-split" id="story">
@@ -71,10 +108,12 @@
     </div>
     <div>
       <p class="eyebrow" style="color:var(--gold-deep);">Our Story</p>
-      <h2 class="story-split__title">Born from a love of real travel, not checkout forms</h2>
-      <p class="story-split__body">FlyApna started because booking a holiday shouldn't feel like filling out a tax form. We wanted travel planning to feel like it did before — a real conversation with someone who actually knows the place you're going.</p>
-      <p class="story-split__body">Today we're a small team who plan every trip personally over a call or WhatsApp — no call centres, no templated packages, just honest advice and pricing.</p>
-      <p class="story-split__body">From weekend Kerala backwater escapes to full Maldives honeymoons, every FlyApna itinerary is shaped around the person taking it — never copy-pasted.</p>
+      <h2 class="story-split__title">Your New Life Begins Here
+</h2>
+      <p class="story-split__body">Travel isn't just about where you land—it’s about the stories you bring home.</p>
+      <p class="story-split__body">At Apna Travels, we craft personalized journeys designed around your vibe, your pace, and your budget</p>
+      <p class="story-split__body">From quiet escapes with someone special to action-packed trips with friends or seamless family holidays, we handle every detail so you can focus on making memories that stay with you forever.
+</p>
       <div style="margin-top:24px;">
         <a href="contact.html" class="btn btn-outline-dark">Meet the team</a>
       </div>
@@ -95,19 +134,19 @@
         <span class="code">DPS</span>
         <h3>Bali</h3>
         <p class="tagline">Rice terraces, temples & sunset surf</p>
-        <p class="price">From ₹58,000 · 6 Days / 5 Nights</p>
+        <p class="price">From ₹24,900 · 5 Days / 4 Nights</p>
       </a>
       <a class="dest-card grad-maldives" href="maldives.html" style="background:url('maldives-card.jpeg') center/cover no-repeat;">
         <span class="code">MLE</span>
         <h3>Maldives</h3>
         <p class="tagline">Overwater villas on turquoise lagoons</p>
-        <p class="price">From ₹95,000 · 5 Days / 4 Nights</p>
+        <p class="price">From ₹24,499 · 4 Days / 3 Nights</p>
       </a>
       <a class="dest-card grad-dubai" href="dubai.html" style="background:url('dubai-card.jpg') center/cover no-repeat;">
         <span class="code">DXB</span>
         <h3>Dubai</h3>
         <p class="tagline">Desert dunes to record-breaking skylines</p>
-        <p class="price">From ₹65,000 · 5 Days / 4 Nights</p>
+        <p class="price">From ₹25,499 · 5 Days / 4 Nights</p>
       </a>
     </div>
   </div>
@@ -162,13 +201,13 @@
     <div>
       <div class="team-card2__initial">S</div>
       <h3 class="team-card2__name">Shabeer.</h3>
-      <p class="team-card2__role">Destinations Lead</p>
+      <p class="team-card2__role">Founder</p>
       <p class="team-card2__bio">Plans your trip like he'd plan his own family's holiday.</p>
     </div>
     <div>
       <div class="team-card2__initial">F</div>
       <h3 class="team-card2__name">Faisal</h3>
-      <p class="team-card2__role">Destinations Lead</p>
+      <p class="team-card2__role">Manager</p>
       <p class="team-card2__bio">Knows every villa, guide, and backroad worth taking.</p>
     </div>
   </div>
@@ -207,16 +246,25 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Get in touch</h4>
-      <ul>
-        <li><a href="tel:+919496375555">+91 94963 75555</a></li>
-        <li><a href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20know%20more%20about%20FlyApna%20holiday%20packages.">WhatsApp: +91 91073 03333</a></li>
-        <li><a href="mailto:info@flyapna.com">info@flyapna.com</a></li>
-      </ul>
-    </div>
+  <h4>Get in touch</h4>
+  <ul>
+    <li><a href="tel:+919496375555">+91 94963 75555</a></li>
+    <li><a href="https://wa.me/919107303333?text=Hi!%20I'd%20like%20to%20know%20more%20about%20FlyApna%20holiday%20packages.">WhatsApp: +91 91073 03333</a></li>
+    <li><a href="mailto:info@flyapna.com">info@flyapna.com</a></li>
+  </ul>
+  <div class="footer-managed">
+    <span>Managed By:</span>
+    <a href="https://apnatravels.org" target="_blank" rel="noopener">
+      <img src="apnatravels-logo.jpeg" alt="Apna Travels">
+    </a>
   </div>
-  <div class="footer-bottom">© 2026 FlyApna.com — All rights reserved</div>
+  
+</div>
+
+  <div class="footer-bottom">© 2026 FlyApna.com — All rights reserved</a></div>
+
 </footer>
+
 <script src="main.js"></script>
 </body>
 </html>

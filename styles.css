@@ -43,7 +43,7 @@ a{color:inherit;}
   top:0; left: 0; right: 0;
    z-index:50;
   display:flex; align-items:center; justify-content:space-between;
-  padding:18px clamp(20px,5vw,64px);
+  padding:14px clamp(20px,5vw,64px);
   background:transparent;
   border-bottom:none;
 }
@@ -52,10 +52,19 @@ a{color:inherit;}
   align-items:center;
   gap:0px;
   text-decoration:none;
+  padding:0px 16px;
+  border-radius:999px;
+  background:rgba(245,241,230,0.95);
+  box-shadow:0 4px 16px rgba(10,24,48,0.25), 0 0 0 1px rgba(242,184,75,0.2);
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+.nav-brand:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 20px rgba(10,24,48,0.3), 0 0 0 1.5px rgba(242,184,75,0.4);
 }
 
 .nav-logo-img{
-  height:44px;      /* ← control the logo's size here */
+  height:35px;      /* ← control the logo's size here */
   width:auto;
   display:block;
 }
@@ -63,17 +72,17 @@ a{color:inherit;}
 .nav-logo{
   font-family:'Baloo 2', sans-serif;
   font-weight:600;
-  font-size:27px;    /* ← control the text's size here, independently */
-  color: #3b9ee8;
+  font-size:22px;
   letter-spacing:-0.01em;
+  color:#25258F;
 }
 
 .nav-logo .accent{
-  color: #3b9ee8
-
-;  /* just the "Apna" part */
+  color:#25258F;
 }
-.nav-logo span{ color:#3b9ee8; }
+.nav-logo span{
+  color:#25258F;
+}
 .nav-links{
   display:flex; align-items:center; gap:28px;
   list-style:none; margin:0; padding:0;
@@ -460,10 +469,11 @@ footer.site-footer{
 .gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 @media (max-width:700px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
 .gallery-tile{
-  aspect-ratio:4/3; border-radius:10px;
-  display:flex; align-items:center; justify-content:center;
-  color:rgba(245,241,230,0.5);
-  font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+  aspect-ratio:4/3;
+  border-radius:10px;
+  object-fit:cover;
+  width:100%;
+  display:block;
 }
 
 /* ---------- Forms ---------- */
@@ -1257,4 +1267,104 @@ footer.site-footer{
   align-items:flex-start;
   justify-content:space-between;
   gap:12px;
+}
+
+/* ---------- Location & map section ---------- */
+.location-strip{
+  background:var(--paper-dim);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:clamp(48px,7vw,72px) clamp(20px,5vw,64px);
+}
+.location-strip__inner{
+  max-width:1120px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:48px;
+  align-items:center;
+}
+.location-strip__details h3{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:clamp(1.5rem,3vw,2rem);
+  color:var(--ink);
+  margin:0 0 16px;
+}
+.location-strip__row{
+  display:flex;
+  gap:12px;
+  margin-bottom:18px;
+  align-items:flex-start;
+}
+.location-strip__row svg{
+  width:20px; height:20px;
+  color:var(--gold-deep);
+  flex:none;
+  margin-top:2px;
+}
+.location-strip__row p{
+  margin:0;
+  font-size:14.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+}
+.location-strip__row a{
+  color:var(--ink-soft);
+  text-decoration:none;
+}
+.location-strip__row a:hover{
+  color:var(--gold-deep);
+  text-decoration:underline;
+}
+.location-strip__map{
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 18px 36px -18px rgba(10,24,48,0.35);
+  height:340px;
+}
+.location-strip__map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+@media (max-width:820px){
+  .location-strip__inner{ grid-template-columns:1fr; gap:32px; }
+  .location-strip__map{ height:280px; }
+}
+
+/* ---------- Footer "Managed by" badge ---------- */
+.footer-managed{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+  padding-top:16px;
+  border-top:1px solid rgba(169,189,218,0.15);
+}
+.footer-managed span{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--mist);
+  white-space:nowrap;
+}
+.footer-managed a{
+  display:block;
+  line-height:0;
+  border-radius:4px;
+  overflow:hidden;
+  transition:opacity 0.2s ease, transform 0.2s ease;
+}
+.footer-managed a:hover{
+  opacity:0.85;
+  transform:translateY(-1px);
+}
+.footer-managed img{
+  height:34px;
+  width:auto;
+  display:block;
 }
