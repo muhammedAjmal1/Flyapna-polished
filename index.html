@@ -14,7 +14,17 @@
 
 
 <body>
-<nav class="navbar">
+<div id="pageLoader" class="page-loader">
+  <div class="page-loader__inner">
+    <img src="logo.png" alt="FlyApna" class="page-loader__logo">
+    <p class="page-loader__text">Fly<span class="accent">Apna</span>.com</p>
+    <div class="page-loader__bar">
+      <div class="page-loader__bar-fill"></div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-home-sticky">
    <a href="index.html" class="nav-brand">
     <img src="logo.png" alt="FlyApna logo" class="nav-logo-img">
     <span class="nav-logo">Fly<span class="accent">Apna</span>.com</span>
@@ -25,12 +35,16 @@
     <li><a href="about.html" class="">About</a></li>
     <li><a href="contact.html" class="">Contact</a></li>
   </ul>
+  <a href="tel:+919107303333" class="nav-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11 11 0 0 0 3.5.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1 11 11 0 0 0 .6 3.5 1 1 0 0 1-.2 1z"/></svg>
+    <span>Call Us</span>
+  </a>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
   </button>
 </nav>
 
-<section class="sky-hero sky-hero--home">
+<section class="sky-hero sky-hero--home" style="padding-top:88px;">
 <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
     <source src="hero-video.mp4" type="video/mp4">
   </video>
@@ -105,7 +119,7 @@
     <div class="dest-carousel-wrap reveal-3d">
       <div class="dest-carousel-track">
 
-        <div class="dest-page reveal-3d">
+        <div class="dest-page">
           <a class="dest-card" href="bali.html" style="background: url('bali-card.jpg') center/cover no-repeat;">
             <span class="code">DPS</span>
             <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22V11"/><path d="M12 11c-2-3-6-3-8-1 2 2 5 2 8 1z"/><path d="M12 11c2-3 6-3 8-1-2 2-5 2-8 1z"/><path d="M12 11c-1-3 0-6 2-8-3 0-5 3-4 6"/><path d="M12 11c1-3 0-6-2-8 3 0 5 3 4 6"/></svg></span>
@@ -176,20 +190,20 @@
 Everything was perfect! Luxurious resort. Perfect for your romantic getaway. All inclusive package definitely worth it.
 
 "</p>
-        <div class="who">Safwan Nevreka, Kochi</div>
+        <div class="who">Safwan Nevreka, Mumbai</div>
       </div>
 <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p>"Truly an amazing experience and the most memorable trip of our life time.
 Thank you Faisal Shaikh and team.
 "</p>
-        <div class="who">Nahiem & Noha Verkum</div>
+        <div class="who">Nahiem & Noha Verkum, Bangalore</div>
       </div>
 <div class="testimonial">
         <div class="stars">★★★★☆</div>
         <p>"Thank you Mubeen Malik & Faisal Shaikh for suggesting Coco Bodu Hiti - Luxury resort in Maldives. It was a great trip.
 "</p>
-        <div class="who">Wasim & Azmeena Farishta
+        <div class="who">Wasim & Azmeena Farishta, Mumbai
 </div>
       </div>
     </div>
@@ -226,7 +240,7 @@ Thank you Faisal Shaikh and team.
       <p class="footer-brand">FlyApna.com</p>
       <p class="footer-tagline">Flights, hotels, and curated holiday packages — planned by real people, not just an algorithm.</p>
       <div class="footer-social">
-        <a href="https://facebook.com/flyapna" target="_blank" rel="noopener" aria-label="Facebook">
+    <a href="https://www.facebook.com/profile.php?id=61591713606710" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
         </a>
         <a href="https://instagram.com/flyapna" target="_blank" rel="noopener" aria-label="Instagram">

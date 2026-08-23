@@ -8,6 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
 
+    // Page loader — shows only on first visit per browser session
+  const pageLoader = document.getElementById('pageLoader');
+  if (pageLoader) {
+    const alreadyShown = sessionStorage.getItem('flyapnaLoaderShown');
+
+    if (alreadyShown) {
+      // Skip the loader entirely on repeat visits this session
+      pageLoader.remove();
+    } else {
+      const heroVid = document.getElementById('heroVideo');
+      const minTime = new Promise(resolve => setTimeout(resolve, 3000));
+      const videoReady = heroVid
+        ? new Promise(resolve => {
+            if (heroVid.readyState >= 3) return resolve();
+            heroVid.addEventListener('canplaythrough', resolve, { once: true });
+            setTimeout(resolve, 6000);
+          })
+        : Promise.resolve();
+
+      Promise.all([minTime, videoReady]).then(() => {
+        pageLoader.classList.add('hidden');
+        setTimeout(() => pageLoader.remove(), 700);
+        sessionStorage.setItem('flyapnaLoaderShown', 'true');
+      });
+    }
+  }
+
   // Homepage destinations — vertical stack of 3, whole group slides right, mobile only
   const carouselWrap = document.querySelector('.dest-carousel-wrap');
   if (carouselWrap) {
@@ -35,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startAutoSlide() {
+      clearInterval(timer);
       if (!window.matchMedia('(max-width:600px)').matches || pages.length < 2) return;
       timer = setInterval(() => goTo(idx + 1), 3800);
     }
@@ -43,8 +71,45 @@ document.addEventListener('DOMContentLoaded', () => {
     buildDots();
     startAutoSlide();
 
-    carouselWrap.addEventListener('touchstart', stopAutoSlide, { passive: true });
-    carouselWrap.addEventListener('touchend', () => setTimeout(startAutoSlide, 4500), { passive: true });
+       let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let resumeTimeout;
+
+    carouselWrap.addEventListener('touchstart', (e) => {
+      stopAutoSlide();
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      track.style.transition = 'none';
+    }, { passive: true });
+
+    carouselWrap.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+      const diff = currentX - startX;
+      const percentDiff = (diff / carouselWrap.offsetWidth) * 100;
+      track.style.transform = `translateX(calc(-${idx * 100}% + ${percentDiff}%))`;
+    }, { passive: true });
+
+    carouselWrap.addEventListener('touchend', () => {
+      isDragging = false;
+      track.style.transition = 'transform 0.75s cubic-bezier(.22,1,.36,1)';
+      const diff = currentX - startX;
+      const threshold = carouselWrap.offsetWidth * 0.15;
+
+      if (diff > threshold) {
+        goTo(idx - 1);
+      } else if (diff < -threshold) {
+        goTo(idx + 1);
+      } else {
+        goTo(idx);
+      }
+
+           currentX = 0;
+      startX = 0;
+      clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(startAutoSlide, 4500);
+    }, { passive: true });
   }
 
   // Contact form submission
@@ -172,6 +237,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+
+    // Sticky navbar — homepage only, turns white after scrolling
+  const homeNavbar = document.querySelector('.navbar-home-sticky');
+  if (homeNavbar) {
+    const toggleScrolled = () => {
+      if (window.scrollY > 60) {
+        homeNavbar.classList.add('scrolled');
+      } else {
+        homeNavbar.classList.remove('scrolled');
+      }
+    };
+    toggleScrolled();
+    window.addEventListener('scroll', toggleScrolled, { passive: true });
+  }
 
   // ===== Name + phone modal — now gates EVERY WhatsApp link on the site =====
   function openWaModal(dest, message, waHref) {
