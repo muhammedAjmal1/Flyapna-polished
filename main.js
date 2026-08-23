@@ -74,22 +74,42 @@ document.addEventListener('DOMContentLoaded', () => {
        let startX = 0;
     let currentX = 0;
     let isDragging = false;
-    let resumeTimeout;
+    
 
     carouselWrap.addEventListener('touchstart', (e) => {
-      stopAutoSlide();
       startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      lockedDirection = null;
       isDragging = true;
       track.style.transition = 'none';
     }, { passive: true });
 
+        let startY = 0;
+    let lockedDirection = null; // 'horizontal' or 'vertical'
+
     carouselWrap.addEventListener('touchmove', (e) => {
       if (!isDragging) return;
       currentX = e.touches[0].clientX;
-      const diff = currentX - startX;
-      const percentDiff = (diff / carouselWrap.offsetWidth) * 100;
-      track.style.transform = `translateX(calc(-${idx * 100}% + ${percentDiff}%))`;
-    }, { passive: true });
+      const currentY = e.touches[0].clientY;
+      const diffX = currentX - startX;
+      const diffY = currentY - startY;
+
+      // Decide swipe direction once, early in the gesture
+      if (!lockedDirection) {
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 6) {
+          lockedDirection = 'horizontal';
+        } else if (Math.abs(diffY) > 6) {
+          lockedDirection = 'vertical';
+        }
+      }
+
+      if (lockedDirection === 'horizontal') {
+        e.preventDefault(); // stop page scroll only for horizontal swipes
+        const percentDiff = (diffX / carouselWrap.offsetWidth) * 100;
+        track.style.transform = `translateX(calc(-${idx * 100}% + ${percentDiff}%))`;
+      }
+      // if vertical, do nothing — let the page scroll normally
+    }, { passive: false });
 
     carouselWrap.addEventListener('touchend', () => {
       isDragging = false;
@@ -105,10 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
         goTo(idx);
       }
 
-           currentX = 0;
+      currentX = 0;
       startX = 0;
-      clearTimeout(resumeTimeout);
-      resumeTimeout = setTimeout(startAutoSlide, 4500);
+      userInteracted = true; // mark that the user manually swiped
+      clearInterval(timer); // permanently stop autoplay
     }, { passive: true });
   }
 
