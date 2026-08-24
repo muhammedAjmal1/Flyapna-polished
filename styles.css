@@ -1661,7 +1661,6 @@ footer.site-footer{
   margin-top:2px;
 }
 
-
 /* ---------- Page loader ---------- */
 .page-loader{
   position:fixed;
@@ -1671,6 +1670,7 @@ footer.site-footer{
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
   transition:opacity 0.6s ease, visibility 0.6s ease;
 }
 .page-loader.hidden{
@@ -1678,7 +1678,72 @@ footer.site-footer{
   visibility:hidden;
   pointer-events:none;
 }
+
+/* ---------- Sky layer: clouds + flying plane ---------- */
+.page-loader__sky{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+.page-loader__cloud{
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+  opacity:0.55;
+}
+.page-loader__cloud::before,
+.page-loader__cloud::after{
+  content:"";
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+}
+.page-loader__cloud--1{
+  width:70px; height:26px;
+  top:18%;
+  left:-100px;
+  animation:cloudDrift 9s linear infinite;
+}
+.page-loader__cloud--1::before{ width:38px; height:38px; top:-18px; left:8px; }
+.page-loader__cloud--1::after{ width:28px; height:28px; top:-12px; left:34px; }
+
+.page-loader__cloud--2{
+  width:90px; height:32px;
+  top:68%;
+  left:-140px;
+  animation:cloudDrift 13s linear infinite;
+  animation-delay:-4s;
+  opacity:0.4;
+}
+.page-loader__cloud--2::before{ width:46px; height:46px; top:-22px; left:10px; }
+.page-loader__cloud--2::after{ width:34px; height:34px; top:-14px; left:44px; }
+
+.page-loader__cloud--3{
+  width:55px; height:20px;
+  top:32%;
+  left:-80px;
+  animation:cloudDrift 7s linear infinite;
+  animation-delay:-2s;
+  opacity:0.35;
+}
+.page-loader__cloud--3::before{ width:28px; height:28px; top:-13px; left:6px; }
+.page-loader__cloud--3::after{ width:20px; height:20px; top:-9px; left:24px; }
+
+@keyframes cloudDrift{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(calc(100vw + 200px)); }
+}
+
+
+
+
+
+
+/* ---------- Logo / text / progress bar ---------- */
 .page-loader__inner{
+  position:relative;
+  z-index:1;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -1703,7 +1768,7 @@ footer.site-footer{
 .page-loader__bar{
   width:160px;
   height:3px;
-  background:white;
+  background:#fff;
   border-radius:99px;
   overflow:hidden;
   margin-top:4px;
@@ -1728,8 +1793,8 @@ footer.site-footer{
 @media (prefers-reduced-motion: reduce){
   .page-loader__logo{ animation:none; }
   .page-loader__bar-fill{ animation:none; width:100%; }
+  .page-loader__plane, .page-loader__cloud, .page-loader__plane-trail::before{ animation:none; }
 }
-
 
 /* ---------- Sticky navbar that turns white on scroll — homepage only ---------- */
 .navbar-home-sticky{
@@ -1897,7 +1962,7 @@ footer.site-footer{
 
 
 
-/* hjghjh */
+/* "Book your trip now" animation */
 
 .hero-cta-wrap{
   position:relative;
@@ -2015,3 +2080,4 @@ footer.site-footer{
 @media (prefers-reduced-motion: reduce){
   .hero-cta-pill__text::after{ display:none; }
 }
+

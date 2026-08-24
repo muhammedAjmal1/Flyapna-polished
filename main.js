@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  
+
   // Homepage destinations — vertical stack of 3, whole group slides right, mobile only
   const carouselWrap = document.querySelector('.dest-carousel-wrap');
   if (carouselWrap) {
