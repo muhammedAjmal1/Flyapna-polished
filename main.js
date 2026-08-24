@@ -2,7 +2,9 @@
 const WHATSAPP_NUMBER = '919107303333'; // country code + number, no + or spaces
 
 // ===== Google Sheet leads endpoint =====
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyaEmrPaYek26WPHpRed87jTq_Zxs9pK-gMlMuJgKPjbQkrcrdNM3D_C6A2XvfXgDqYtQ/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwKIO_dPdb_2p1urX4dmvprOpMMm5C2lrx9cCBYvKZaitUuWH4VQqo04TH_bhdABGniiQ/exec';
+                  
+                  
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
@@ -273,6 +275,81 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', toggleScrolled, { passive: true });
   }
 
+    // Desktop call button — shows number popup instead of dialing directly
+  const navCallBtn = document.getElementById('navCallBtn');
+  if (navCallBtn) {
+    const isDesktop = window.matchMedia('(min-width:821px)').matches;
+
+    if (isDesktop) {
+      navCallBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Close if already open
+        const existing = document.querySelector('.call-popup');
+        if (existing) { existing.remove(); return; }
+
+        const popup = document.createElement('div');
+        popup.className = 'call-popup';
+               popup.innerHTML = `
+          <div style="margin-bottom:8px;">Call us:</div>
+          <a href="tel:+919496375555">+91 94963 75555</a><br>
+          <a href="tel:+919107303333">+91 91073 03333</a>
+        `;
+        navCallBtn.appendChild(popup);
+
+        requestAnimationFrame(() => popup.classList.add('show'));
+
+        // Close when clicking outside
+        const closeOnOutsideClick = (evt) => {
+          if (!navCallBtn.contains(evt.target)) {
+            popup.remove();
+            document.removeEventListener('click', closeOnOutsideClick);
+          }
+        };
+        setTimeout(() => document.addEventListener('click', closeOnOutsideClick), 10);
+      });
+    }
+  }
+
+    // Typewriter effect for hero CTA pill text — starts only after the page loader finishes
+  const ctaTypewriter = document.getElementById('ctaTypewriter');
+  if (ctaTypewriter) {
+    const fullText = 'Book your trip now';
+    let i = 0;
+
+    function typeChar() {
+      if (i <= fullText.length) {
+        ctaTypewriter.textContent = fullText.slice(0, i);
+        i++;
+        setTimeout(typeChar, 55);
+      } else {
+        ctaTypewriter.classList.add('done');
+      }
+    }
+
+    function startTypewriter() {
+      setTimeout(typeChar, 400);
+    }
+
+    if (pageLoader) {
+      // If the loader exists and is actively showing, wait for it to finish first
+      const alreadyShown = sessionStorage.getItem('flyapnaLoaderShown');
+      if (!alreadyShown) {
+        // Loader is about to run — wait for it to hide, then start typing
+        const loaderCheck = setInterval(() => {
+          if (pageLoader.classList.contains('hidden') || !document.body.contains(pageLoader)) {
+            clearInterval(loaderCheck);
+            startTypewriter();
+          }
+        }, 100);
+      } else {
+        // Loader already shown this session — skip straight to typing
+        startTypewriter();
+      }
+    } else {
+      startTypewriter();
+    }
+  }
   // ===== Name + phone modal — now gates EVERY WhatsApp link on the site =====
   function openWaModal(dest, message, waHref) {
     const overlay = document.createElement('div');
