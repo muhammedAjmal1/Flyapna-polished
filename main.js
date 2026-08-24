@@ -294,8 +294,9 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.className = 'call-popup';
                popup.innerHTML = `
           <div style="margin-bottom:8px;">Call us:</div>
-          <a href="tel:+919496375555">+91 94963 75555</a><br>
-          <a href="tel:+919107303333">+91 91073 03333</a>
+           <a href="tel:+919107303333">+91 91073 03333</a><br>
+          <a href="tel:+919496375555">+91 94963 75555</a>
+          
         `;
         navCallBtn.appendChild(popup);
 
