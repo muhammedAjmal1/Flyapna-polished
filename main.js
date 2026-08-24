@@ -352,6 +352,43 @@ document.addEventListener('DOMContentLoaded', () => {
       startTypewriter();
     }
   }
+
+
+    // Testimonial carousel — click-to-slide dots, auto-slide stops on manual interaction
+  const testimonialWrap = document.querySelector('.testimonial-carousel-wrap');
+  if (testimonialWrap) {
+    const tTrack = testimonialWrap.querySelector('.testimonial-carousel-track');
+    const tPages = tTrack.querySelectorAll('.testimonial-page');
+    const tDotsWrap = testimonialWrap.querySelector('.testimonial-dots');
+    let tIdx = 0;
+    let tTimer;
+
+    function tGoTo(i) {
+      tIdx = (i + tPages.length) % tPages.length;
+      tTrack.style.transform = `translateX(-${tIdx * 100}%)`;
+      tDotsWrap.querySelectorAll('.testimonial-dot').forEach((d, di) => {
+        d.classList.toggle('active', di === tIdx);
+      });
+    }
+
+    function tStartAutoSlide() {
+      clearInterval(tTimer);
+      tTimer = setInterval(() => tGoTo(tIdx + 1), 5000);
+    }
+
+    tPages.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => {
+        tGoTo(i);
+        clearInterval(tTimer); // permanently stop auto-slide once user manually clicks
+      });
+      tDotsWrap.appendChild(dot);
+    });
+
+    tStartAutoSlide();
+  }
+   
   // ===== Name + phone modal — now gates EVERY WhatsApp link on the site =====
   function openWaModal(dest, message, waHref) {
     const overlay = document.createElement('div');

@@ -2089,3 +2089,37 @@ footer.site-footer{
   .hero-cta-pill__text::after{ display:none; }
 }
 
+/* ---------- Testimonial carousel ---------- */
+.testimonial-carousel-wrap{
+  position:relative;
+  overflow:hidden;
+  margin-top:48px;
+}
+.testimonial-carousel-track{
+  display:flex;
+  transition:transform 0.75s cubic-bezier(.22,1,.36,1);
+  will-change:transform;
+}
+.testimonial-page{
+  flex:0 0 100%;
+  padding:2px;
+}
+
+.testimonial-dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:28px;
+}
+.testimonial-dot{
+  width:7px; height:7px;
+  border-radius:50%;
+  background:var(--line);
+  cursor:pointer;
+  transition:background 0.35s ease, transform 0.35s cubic-bezier(.34,1.56,.64,1), width 0.35s ease;
+}
+.testimonial-dot.active{
+  background:var(--gold-deep);
+  width:20px;
+  border-radius:4px;
+}
