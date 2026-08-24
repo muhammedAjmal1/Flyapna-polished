@@ -37,6 +37,14 @@ a{color:inherit;}
   text-transform:uppercase;
 }
 
+
+
+/* Prevent iOS Safari auto-zoom on form focus */
+input, select, textarea{
+  font-size:16px;
+}
+
+
 /* ---------- Navbar ---------- */
 .navbar{
   position:absolute; 
