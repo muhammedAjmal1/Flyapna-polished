@@ -418,6 +418,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameInput = document.getElementById('waName');
     nameInput.focus();
 
+    const waPhoneInput = document.getElementById('waPhone');
+    waPhoneInput.addEventListener('input', () => {
+      waPhoneInput.value = waPhoneInput.value.replace(/[^0-9]/g, '').slice(0, 10);
+    });
+
     document.getElementById('waClose').addEventListener('click', () => overlay.remove());
     overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
 
@@ -425,6 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = nameInput.value.trim();
       const phone = document.getElementById('waPhone').value.trim();
       if (!name || !phone) { alert('Please fill in both fields.'); return; }
+            if (phone.length !== 10) { alert('Please enter a valid 10-digit phone number.'); return; }
 
       navigator.sendBeacon(SHEET_URL, JSON.stringify({
         name, phone, destination: dest, source: 'WhatsApp Button',
