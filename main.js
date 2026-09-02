@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="form-field">
           <label>Phone / WhatsApp number</label>
-          <input type="tel" id="waPhone" placeholder="+91 XXXXX XXXXX" required>
+          <input type="tel" id="waPhone" placeholder="10-digit number" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" title="Please enter a valid 10-digit phone number">
         </div>
         <div class="wa-modal-actions">
           <button class="btn btn-gold" id="waSubmit">Continue to WhatsApp</button>
@@ -440,6 +440,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
       window.location.href = finalHref;
       overlay.remove();
+    });
+  }
+
+
+    // Restrict phone number fields to digits only, live as the user types
+  document.querySelectorAll('input[type="tel"]').forEach(input => {
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/[^0-9]/g, '').slice(0, 10);
+    });
+  });
+
+    // Restrict "From Date" and "To Date" fields to today or later
+  const todayStr = new Date().toISOString().split('T')[0]; // format: YYYY-MM-DD
+
+  const fromDateInput = document.getElementById('tf_fromdate');
+  const toDateInput = document.getElementById('tf_todate');
+
+  if (fromDateInput) {
+    fromDateInput.setAttribute('min', todayStr);
+  }
+  if (toDateInput) {
+    toDateInput.setAttribute('min', todayStr);
+  }
+
+  // Keep "To Date" always >= "From Date" once a from-date is chosen
+  if (fromDateInput && toDateInput) {
+    fromDateInput.addEventListener('change', () => {
+      if (fromDateInput.value) {
+        toDateInput.setAttribute('min', fromDateInput.value);
+        // If the already-selected "to date" is now before the new "from date", clear it
+        if (toDateInput.value && toDateInput.value < fromDateInput.value) {
+          toDateInput.value = '';
+        }
+      }
     });
   }
 
