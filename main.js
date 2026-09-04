@@ -169,8 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Rewrite every WhatsApp link on the page to use the number above
-  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    // Rewrite every WhatsApp link on the page to use the number above — except ones marked to keep their own number
+  document.querySelectorAll('a[href*="wa.me"]:not(.no-wa-rewrite)').forEach(link => {
     link.href = link.href.replace(/wa\.me\/\d+/, `wa.me/${WHATSAPP_NUMBER}`);
   });
 
